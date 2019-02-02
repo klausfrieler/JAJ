@@ -46,7 +46,7 @@ make_training_feedback <- function(seq_len){
 }
 practice <- function(img_dir, with_intro = T) {
   if(with_intro){
-    ret <- one_button_page(body = psychTestR::i18n("TRAINING_INTRO"),
+    ret <- psychTestR::one_button_page(body = psychTestR::i18n("TRAINING_INTRO"),
                          button_text = psychTestR::i18n("CONTINUE"))
   }else{
     ret <- NULL
@@ -71,6 +71,6 @@ practice <- function(img_dir, with_intro = T) {
   ret <- c(ret, psychTestR::one_button_page( body = psychTestR::i18n("CONTINUE_MAIN_TEST"),
                                              button_text = psychTestR::i18n("CONTINUE")
   ))
-  messagef("Created %d training pages", length(ret))
+  #messagef("Created %d training pages", length(ret))
   ret
 }

@@ -1,4 +1,14 @@
 ###### J & J Stuff #####
+library(tidyverse)
+get_item_value <- function(item_id, col){
+  if(purrr::is_scalar_character(item_id)){
+    return(JAJ::JAJ_item_bank[JAJ::JAJ_item_bank$item_id == item_id, col][1])
+  }
+  if(purrr::is_scalar_integer(item_id) || purrr::is_scalar_double(item_id)){
+    return(JAJ::JAJ_item_bank[item_id, col][1])
+  }
+  stop(printf("Invalid item id %s", item_id))
+}
 
 JAJ_training_items_pos <- c("1", "23", "434")
 JAJ_training_items_hands <- c("r", "lr", "rlr")
@@ -18,7 +28,7 @@ custom_NAFC_page <- function(label,
             is.scalar.logical(arrange_vertically))
   ui <- shiny::div(
     tagify(prompt),
-    make_ui_NAFC(choices,
+    psychTestR::make_ui_NAFC(choices,
                  hide = hide_response_ui,
                  arrange_vertically = arrange_vertically,
                  id = response_ui_id))
@@ -26,7 +36,7 @@ custom_NAFC_page <- function(label,
     get_answer <- function(input, ...) input$last_btn_pressed
   }
   validate <- function(answer, ...) !is.null(answer)
-  page(ui = ui, label = label,  get_answer = get_answer, save_answer = save_answer,
+  psychTestR::page(ui = ui, label = label,  get_answer = get_answer, save_answer = save_answer,
        validate = validate, on_complete = on_complete, final = FALSE,
        admin_ui = admin_ui)
 }
@@ -41,7 +51,7 @@ scale_coords <- function(coords, scale_factor = 1){
     round(as.integer(unlist(strsplit(coords, ",")))*scale_factor),
     collapse=",")
 }
-dot_positions <- tibble(pos = 1:6,
+dot_positions <- tibble::tibble(pos = 1:6,
                         coords = c("100,200,160,260",
                                    "266,68,322,128",
                                    "431,195,500,255",
@@ -127,14 +137,14 @@ JAJ_page_position <- function(seq_length,
                               get_answer = NULL,
                               on_complete = NULL,
                               instruction_page = FALSE){
-  jill <- shiny::img(src = sprintf("%s/%s", img_url, "jill.jpg"), height="300")
+  jill <- shiny::img(src = sprintf("%s/%s", JAJ_img_url, "jill.jpg"), height="300")
   pos_img <- "empty.jpg"
   if(!is.null(arrow_pos) & is.numeric(arrow_pos)){
     pos_img <- sprintf("arrow_%d.jpg", arrow_pos)
     #printf("Pos img: %s", pos_img)
   }
   click_area <- shiny::img(src = sprintf("%s/%s",
-                                         img_url, pos_img),
+                                         JAJ_img_url, pos_img),
                            height = "300",
                            usemap = "#dot_positions",
                            id = "click_area")
