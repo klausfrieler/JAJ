@@ -1,15 +1,7 @@
 library(tidyverse)
 library(psychTestR)
 library(psychTestRCAT)
-source("data_raw/JAJ_dict.R")
-source("data_raw/JAJ_item_bank.R")
-source("R/options.R")
-source("R/practice.R")
-source("R/instructions.R")
-source("R/main_test.R")
-source("R/item_page.R")
-source("R/feedback.R")
-img_url <- "http://media.gold-msi.org/test_materials/JAJ/img"
+JAJ_img_url <- "http://media.gold-msi.org/test_materials/JAJ/img"
 
 messagef <- function(...) message(sprintf(...))
 printf <- function(...) print(sprintf(...))
@@ -18,13 +10,13 @@ JAJ <- function(num_items = 16L,
                 take_training = TRUE,
                 label = "JAJ",
                 feedback = JAJ_feedback_with_score(),
-                img_dir = "http://media.gold-msi.org/test_materials/JAJ/img",
+                img_dir = JAJ_img_url,
                 next_item.criterion = "bOpt",
                 next_item.estimator = "BM",
                 next_item.prior_dist = "norm",
                 next_item.prior_par = c(0, 1),
                 final_ability.estimator = "WL",
-                dict = JAJ_dict) {
+                dict = JAJ::JAJ_dict) {
   stopifnot(is.scalar.character(label), is.scalar.numeric(num_items),
             is.scalar.logical(take_training),
             is.scalar.character(img_dir),
@@ -41,8 +33,8 @@ JAJ <- function(num_items = 16L,
                 next_item.estimator = next_item.estimator,
                 next_item.prior_dist = next_item.prior_dist,
                 next_item.prior_par = next_item.prior_par,
-                final_ability.estimator = final_ability.estimator, dict = JAJ_dict),
+                final_ability.estimator = final_ability.estimator, dict = dict),
       feedback
     )},
-    dict = dict)
+    dict = JAJ::JAJ_dict)
 }

@@ -1,0 +1,13 @@
+id;pos;hands;page_type;buttons;arrow_pos;text
+1a;3;r;hand;FALSE;FALSE;Meet Jill on the left and Jack on the right of the screen. They each have a blue ball in one of their hands.
+1b;6;r;hand;FALSE;FALSE;Behind Jack there are 6 different orange spots. Jill can't move, but Jack can turn, as you can see here. When Jack turns, his ball will cover one of the spots behind him. **Every round, remember which spots the ball covers.**
+1c;6;r;hand;FALSE;FALSE;"Jack turns every time you answer the following question: ""Does Jack hold the ball in the same hand as Jill?"". Before you answer, remember where the ball is. "
+2a;4;l;hand;TRUE;FALSE;Jill always holds the ball always in the right hand **from your view**, but Jack can hold the ball in the left or right hand.
+2b;4;NA;position;TRUE;TRUE;Now click this spot that the ball was covering.
+2c;NA;NA;empty;FALSE;FALSE;Congratulations! This is how you pass a round: 1) say whether Jack and Jill have the ball in the same hand, 2) remember where the ball goes to on each of Jack's turns
+3a;5;r;hand;TRUE;FALSE;"Jack can also turn more than once in a round. Now Jack has the ball in the same hand as Jill. Click ""Same"". Remember the spot the ball is covering."
+3b;1;l;hand;TRUE;FALSE;"And now for the second turn, Jack has the ball in a different hand. Click ""Different"". Remember the spot the ball is covering."
+3c;5;NA;position;TRUE;TRUE;Now you click the 2 places the ball went to when Jack turned in the same order. First the ball was here, so click here.
+3d;1;NA;position;TRUE;TRUE;And then it was here, so now click here.
+3e;NA;NA;empty;FALSE;FALSE;Congratulations! This is how you pass a round: 1) say whether Jack and Jill have the ball in the same hand, 2) remember where the ball goes to on each of Jack's turns
+3f;NA;NA;empty;FALSE;FALSE;Now try it yourself without help.

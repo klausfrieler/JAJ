@@ -6,7 +6,7 @@
 #' @examples
 #' \dontrun{
 #' demo_JAJ(feedback = JAJ_feedback_with_score())}
-JAJ_feedback_with_score <- function(dict = JAJ_dict) {
+JAJ_feedback_with_score <- function(dict = JAJ::JAJ_dict) {
   psychTestR::new_timeline(
     c(
       psychTestR::reactive_page(function(state, ...) {
@@ -16,7 +16,7 @@ JAJ_feedback_with_score <- function(dict = JAJ_dict) {
         sum_score <- sum(results$score)
         num_question <- nrow(results)
         #printf("Sum scores: %d, total items: %d", sum_score, num_question)
-        text_finish <- psychTestR::i18n("COMPLETED",
+        text_finish <- psychTestR::i18n("SUM_FEEDBACK",
                                         html = TRUE,
                                         sub = list(num_question = num_question, num_correct = sum_score))
         psychTestR::page(
