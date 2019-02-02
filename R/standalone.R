@@ -27,7 +27,7 @@ standalone_JAJ <- function(title = "Jack & Jill Memory Test",
                            take_training = TRUE,
                            admin_password = "conifer",
                            researcher_email = "kf@omniversum.de",
-                           languages = c("en", "de", "ru"),
+                           languages = c("EN", "DE", "RU"),
                            dict = JAJ::JAJ_dict,
                            validate_id = "auto",
                            ...) {

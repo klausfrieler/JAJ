@@ -23,7 +23,7 @@ demo_JAJ <- function(num_items = 3L,
                      admin_password = "demo",
                      researcher_email = "kf@omniversum.de",
                      dict = JAJ::JAJ_dict,
-                     language = "en",
+                     language = "EN",
                      ...) {
   elts <- c(
     psychTestR::new_timeline(psychTestR::one_button_page(
