@@ -10,6 +10,9 @@ NULL
 #' @importFrom dplyr "pull"
 NULL
 
+#' @importFrom tibble "tibble"
+NULL
+
 #' @importFrom purrr "is_scalar_double"
 NULL
 

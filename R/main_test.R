@@ -14,8 +14,8 @@ main_test <- function(label, img_dir, num_items,
       test = function(state, ...) {
         counter <- psychTestR::get_local("counter", state)
         n <- psychTestR::get_local("item", state)$seq_len + 1
-        messagef("Test Item : %s", paste0(psychTestR::get_local("item", state), collapse = " "))
-        messagef("Test Answer: %s", paste0(psychTestR::answer(state), collapse = " "))
+        #messagef("Test Item : %s", paste0(psychTestR::get_local("item", state), collapse = " "))
+        #messagef("Test Answer: %s", paste0(psychTestR::answer(state), collapse = " "))
         psychTestR::answer(state) <- psychTestR::answer(state)$raw
         counter < n
       },
@@ -28,8 +28,8 @@ main_test <- function(label, img_dir, num_items,
         psychTestR::reactive_page(function(state, ...) {
           counter <- psychTestR::get_local("counter", state)
           page <- JAJ_item_wrapper(img_dir = img_dir, state = state, counter = counter)
-          messagef("Show Item : %s", paste0(psychTestR::get_local("item", state), collapse = " "))
-          messagef("Show Answer: %s", paste0(psychTestR::answer(state), collapse = " "))
+          #messagef("Show Item : %s", paste0(psychTestR::get_local("item", state), collapse = " "))
+          #messagef("Show Answer: %s", paste0(psychTestR::answer(state), collapse = " "))
           page
         })))
   ),
