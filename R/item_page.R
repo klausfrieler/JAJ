@@ -63,10 +63,10 @@ generate_area_entry <- function(position, scale_factor = 1){
   if(length(position) > 1){
     return(lapply(position, generate_area_entry, scale_factor))
   }
-  dot_positions <- dot_positions %>% mutate(coords = scale_coords(coords, scale_factor))
+  dot_positions <- dot_positions %>% dplyr::mutate(coords = scale_coords(coords, scale_factor))
   #print(scale_coords(dot_positions$coords, scale_factor))
   click_handler <- sprintf("register_click(%d)", position)
-  coords <- dot_positions %>% filter(pos == position) %>% pull(coords)
+  coords <- dot_positions %>% dplyr::filter(pos == position) %>% dplyr::pull(coords)
 
   shiny::tags$area(
     shape = "rect",

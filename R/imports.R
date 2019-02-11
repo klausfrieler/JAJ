@@ -1,6 +1,15 @@
 #' @importFrom dplyr "%>%"
 NULL
 
+#' @importFrom dplyr "mutate"
+NULL
+
+#' @importFrom dplyr "filter"
+NULL
+
+#' @importFrom dplyr "pull"
+NULL
+
 #' @importFrom purrr "is_scalar_double"
 NULL
 
