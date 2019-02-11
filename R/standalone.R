@@ -15,7 +15,7 @@
 #' @param researcher_email (Scalar character)
 #' If not \code{NULL}, this researcher's email address is displayed
 #' at the bottom of the screen so that online participants can ask for help.
-#' @param languages (Character vector)
+#' @param language (Character vector)
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), German (\code{"DE"})
 #' and Russion (\code{"RU"}).
@@ -33,11 +33,12 @@ JAJ_standalone <- function(title = NULL,
                            take_training = TRUE,
                            admin_password = "conifer",
                            researcher_email = "kf@omniversum.de",
-                           languages = c("EN", "DE", "RU"),
+                           language = "EN",
                            dict = JAJ::JAJ_dict,
                            validate_id = "auto",
                            ...) {
   feedback <- NULL
+  language <- match.arg(language, c("EN", "DE", "RU"))
   if(with_feedback) {
     feedback <- JAJ_feedback_with_score()
   }
@@ -75,5 +76,5 @@ JAJ_standalone <- function(title = NULL,
                                    admin_password = admin_password,
                                    researcher_email = researcher_email,
                                    demo = FALSE,
-                                   languages = languages))
+                                   languages = language))
 }
