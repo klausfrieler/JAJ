@@ -83,7 +83,7 @@ The JAJ currently supports English (EN),  German (DE), and Russion (RU).
 You can select one of these languages by passing a language code as 
 an argument to `JAJ_standalone()`, e.g. `JAJ_standalone(languages = "DE")`,
 or alternatively by passing it as a URL parameter to the test browser,
-eg. http://127.0.0.1:4412/?language=de (note that the `p_id` argument must be empty).
+eg. http://127.0.0.1:4412/?language=DE (note that the `p_id` argument must be empty).
 
 ## Installation instructions (Shiny Server)
 
