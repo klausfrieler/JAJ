@@ -1,6 +1,6 @@
 JAJ_dict_raw <- readRDS("data-raw/JAJ_dict.RDS")
 
-JAJ_dict <- psychTestR::i18n_dict$new(JAJ_dict_raw)
+JAJ_dict <- psychTestR::i18n_dict$new(JAJ_dict_raw, markdown = F)
 get_JAJ_dict <- function(){
   return(JAJ::JAJ_dict)
 }

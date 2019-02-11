@@ -1,1 +1,5 @@
-exportPattern("^[[:alpha:]]+")
+#exportPattern("^[[:alpha:]]+")
+export(demo_JAJ)
+export(JAJ)
+export(JAJ_languages)
+export(standalone_JAJ)

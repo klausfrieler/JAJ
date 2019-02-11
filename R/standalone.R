@@ -21,7 +21,11 @@
 #library(tidyverse)
 options(shiny.error = browser)
 
-standalone_JAJ <- function(title = "Jack & Jill Memory Test",
+#I cannot put the true Russian title here into the source, because of some (yet another mysterious) encoding issue
+#has to be done during calling standalone_JAJ, which works.
+
+
+standalone_JAJ <- function(title = NULL,
                            num_items = 16L,
                            with_feedback = FALSE,
                            take_training = TRUE,
@@ -53,6 +57,12 @@ standalone_JAJ <- function(title = "Jack & Jill Memory Test",
         psychTestR::i18n("CLOSE_BROWSER"))
       ), dict = dict)
   )
+  if(is.null(title)){
+    title <-default_title <- c("RU" = "",
+                               "EN" = "Jack & Jill Memory Test",
+                               "DE" = "Johann und Johanna Gedächtnistest")
+    title[["RU"]] <- JAJ::JAJ_dict  %>% as.data.frame() %>% filter(key == "TITLE") %>% pull(RU)
+  }
   psychTestR::make_test(
     elts,
     opt = psychTestR::test_options(title = title,
