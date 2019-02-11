@@ -1,31 +1,33 @@
 #source("R/JAJ.R")
+#options(shiny.error = browser)
 #' Standalone JAJ
 #'
 #' This function launches a standalone testing session for the MPT.
 #' This can be used for data collection, either in the laboratory or online.
 #' @param title (Scalar character) Title to display during testing.
+#' @param num_items (Scalar integer) Number of items for the test.
+#' @param with_feedback (Boolean scalar) Defines whether feedback about test performance shall be given
+#' at the end of the test.
+#' Defaults to TRUE.
+#' @param take_training (Boolean scalar) Defines whether instructions and training are included.
+#' Defaults to TRUE.
 #' @param admin_password (Scalar character) Password for accessing the admin panel.
 #' @param researcher_email (Scalar character)
 #' If not \code{NULL}, this researcher's email address is displayed
 #' at the bottom of the screen so that online participants can ask for help.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"EN"}),
-#' and German (\code{"DE"}).
+#' Possible languages include English (\code{"EN"}), German (\code{"DE"})
+#' and Russion (\code{"RU"}).
 #' The first language is selected by default
-#' @param dict The psychTestR dictionary used for internationalisation.
+#' @param dict The psychTestR dictionary used for internationalisation. Defaults to  JAJ_dict.
+#' @param validate_id An external function for validating IDs, which takes a string ID as input and returns a BOOELAN.
+#' Defaults to "auto", which validates purely alphanumeric IDs with no more than 100 characters.
 #' @param ... Further arguments to be passed to \code{\link{JAJ}()}.
 #' @export
 #'
 #'
-#library(tidyverse)
-options(shiny.error = browser)
-
-#I cannot put the true Russian title here into the source, because of some (yet another mysterious) encoding issue
-#has to be done during calling standalone_JAJ, which works.
-
-
-standalone_JAJ <- function(title = NULL,
+JAJ_standalone <- function(title = NULL,
                            num_items = 16L,
                            with_feedback = FALSE,
                            take_training = TRUE,
@@ -58,10 +60,14 @@ standalone_JAJ <- function(title = NULL,
       ), dict = dict)
   )
   if(is.null(title)){
-    title <-default_title <- c("RU" = "",
-                               "EN" = "Jack & Jill Memory Test",
-                               "DE" = "Johann und Johanna Gedächtnistest")
-    title[["RU"]] <- JAJ::JAJ_dict  %>% as.data.frame() %>% filter(key == "TITLE") %>% pull(RU)
+    #extract title as named vector from dictionary
+    title <-
+      JAJ::JAJ_dict  %>%
+      as.data.frame() %>%
+      filter(key == "TITLE") %>%
+      select(-key) %>%
+      as.list() %>%
+      unlist()
   }
   psychTestR::make_test(
     elts,

@@ -3,7 +3,7 @@
 #' This function launches a demo for the JAJ.
 #'
 #' @param num_items (Integer scalar) Number of items in the test.
-#' @param take_trainging (Boolean scalar) Defines whether instructions and training are included.
+#' @param take_training (Boolean scalar) Defines whether instructions and training are included.
 #' Defaults to TRUE.
 #' @param feedback (Function) Defines the feedback to give the participant
 #' at the end of the test. Defaults to a graph-based feedback page.
@@ -15,9 +15,13 @@
 #' Defaults to \email{kf@omniversum.de},
 #' the email address of this package's developer.
 #' @param dict The psychTestR dictionary used for internationalisation.
+#' @param language The language you want to run your demo in.
+#' Possible languages include English (\code{"EN"}), German (\code{"DE"})
+#' and Russion (\code{"RU"}).
+#' The first language is selected by default
 #' @param ... Further arguments to be passed to \code{\link{JAJ}()}.
 #' @export
-demo_JAJ <- function(num_items = 3L,
+JAJ_demo <- function(num_items = 3L,
                      take_training = TRUE,
                      feedback = JAJ::JAJ_feedback_with_score(),
                      admin_password = "demo",
