@@ -56,7 +56,7 @@ practice <- function(img_dir, with_intro = T) {
 
   for(i in 1:2){
     label <- sprintf("training%d", i)
-    training <- JAJ_item(item_id = label,
+    training <- JAJ_item(item_id = i,
                          running_item_number = i,
                          num_items_in_test = 0, #Training!
                          img_dir = img_dir,

@@ -104,7 +104,7 @@ get_answer_hand <- function(correct_answer, item_id){
   function(input, ...) {
     #print("get_answer_hand called")
     #printf("%s %s %s", item_id, input$last_btn_pressed, correct_answer)
-    tibble(type = "hand",
+    tibble::tibble(type = "hand",
            item_id = item_id,
            raw = input$last_btn_pressed,
            correct_answer = correct_answer,
@@ -119,9 +119,7 @@ get_answer_positions <- function(correct_answer, item_id){
   function(input, ...) {
     #print("get_answer_positions called")
     #printf("POS: %s CA: %s", input$pos_seq, correct_answer)
-    #return(tibble(answer = input$pos_seq))
-    #return(input$pos_seq)
-    ret <- tibble(type = "position",
+    ret <- tibble::tibble(type = "position",
            item_id = item_id,
            raw = input$pos_seq,
            correct_answer = correct_answer,

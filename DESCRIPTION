@@ -18,7 +18,8 @@ Imports:
     htmltools (>= 0.3.6),
     tidyverse (>= 1.2.1),
     dplyr,
-    purrr
+    purrr,
+    tibble
 Suggests:
     codetools,
     devtools (>= 1.13.6)
