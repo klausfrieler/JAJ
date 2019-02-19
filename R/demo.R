@@ -31,7 +31,8 @@ JAJ_demo <- function(num_items = 3L,
                      ...) {
   elts <- c(
     psychTestR::new_timeline(psychTestR::one_button_page(
-      psychTestR::i18n("WELCOME")
+      body = psychTestR::i18n("WELCOME"),
+      button_text = psychTestR::i18n("CONTINUE")
     ), dict = dict),
     JAJ::JAJ(num_items = num_items,
              take_training = take_training,
