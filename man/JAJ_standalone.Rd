@@ -6,8 +6,8 @@
 \usage{
 JAJ_standalone(title = NULL, num_items = 16L, with_feedback = FALSE,
   take_training = TRUE, admin_password = "conifer",
-  researcher_email = "kf@omniversum.de", language = "EN",
-  dict = JAJ::JAJ_dict, validate_id = "auto", ...)
+  researcher_email = "longgold@gold.uc.ak", languages = c("EN", "DE",
+  "RU"), dict = JAJ::JAJ_dict, validate_id = "auto", ...)
 }
 \arguments{
 \item{title}{(Scalar character) Title to display during testing.}
@@ -27,7 +27,7 @@ Defaults to TRUE.}
 If not \code{NULL}, this researcher's email address is displayed
 at the bottom of the screen so that online participants can ask for help.}
 
-\item{language}{(Character vector)
+\item{languages}{(Character vector)
 Determines the languages available to participants.
 Possible languages include English (\code{"EN"}), German (\code{"DE"})
 and Russion (\code{"RU"}).

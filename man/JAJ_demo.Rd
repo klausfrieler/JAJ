@@ -6,7 +6,7 @@
 \usage{
 JAJ_demo(num_items = 3L, take_training = TRUE,
   feedback = JAJ::JAJ_feedback_with_score(), admin_password = "demo",
-  researcher_email = "kf@omniversum.de", dict = JAJ::JAJ_dict,
+  researcher_email = "longgold@gold.uc.ak", dict = JAJ::JAJ_dict,
   language = "EN", ...)
 }
 \arguments{
