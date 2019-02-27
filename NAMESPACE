@@ -2,6 +2,7 @@
 
 export(JAJ)
 export(JAJ_demo)
+export(JAJ_feedback_with_graph)
 export(JAJ_feedback_with_score)
 export(JAJ_languages)
 export(JAJ_standalone)

@@ -10,9 +10,10 @@ JAJ_feedback_with_score(dict = JAJ::JAJ_dict)
 \item{dict}{The psychTestR dictionary used for internationalisation.}
 }
 \description{
-Here the participant is given no feedback at the end of the test.
+Here the participant is given textuak  feedback at the end of the test.
 }
 \examples{
 \dontrun{
 demo_JAJ(feedback = JAJ_feedback_with_score())}
+
 }
