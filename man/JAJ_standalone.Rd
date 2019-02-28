@@ -5,9 +5,10 @@
 \title{Standalone JAJ}
 \usage{
 JAJ_standalone(title = NULL, num_items = 16L, with_feedback = FALSE,
-  take_training = TRUE, admin_password = "conifer",
-  researcher_email = "longgold@gold.uc.ak", languages = c("EN", "DE",
-  "RU"), dict = JAJ::JAJ_dict, validate_id = "auto", ...)
+  with_welcome = TRUE, take_training = TRUE,
+  admin_password = "conifer", researcher_email = "longgold@gold.uc.ak",
+  languages = c("EN", "DE", "RU"), dict = JAJ::JAJ_dict,
+  validate_id = "auto", ...)
 }
 \arguments{
 \item{title}{(Scalar character) Title to display during testing.}
@@ -17,6 +18,8 @@ JAJ_standalone(title = NULL, num_items = 16L, with_feedback = FALSE,
 \item{with_feedback}{(Boolean scalar) Defines whether feedback about test performance shall be given
 at the end of the test.
 Defaults to TRUE.}
+
+\item{with_welcome}{(Logical scalar) Whether to include a welcome message. Defaults to TRUE.}
 
 \item{take_training}{(Boolean scalar) Defines whether instructions and training are included.
 Defaults to TRUE.}

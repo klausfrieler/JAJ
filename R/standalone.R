@@ -9,6 +9,7 @@
 #' @param with_feedback (Boolean scalar) Defines whether feedback about test performance shall be given
 #' at the end of the test.
 #' Defaults to TRUE.
+#' @param with_welcome (Logical scalar) Whether to include a welcome message. Defaults to TRUE.
 #' @param take_training (Boolean scalar) Defines whether instructions and training are included.
 #' Defaults to TRUE.
 #' @param admin_password (Scalar character) Password for accessing the admin panel.

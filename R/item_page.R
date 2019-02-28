@@ -268,7 +268,7 @@ JAJ_item <- function(item_id,
 
   prompt <- shiny::div(
     shiny::h4(progress, style="text-align:center"),
-    psychTestR::i18n("PROMPT_POSITION"))
+    shiny::p(psychTestR::i18n("PROMPT_POSITION"),  style="text-align:center"))
   get_answer <- get_answer_positions(paste(pos_seq, collapse=""), item_id)
 
   ret <- c(ret, JAJ_page_position(seq_length = length(pos_seq),

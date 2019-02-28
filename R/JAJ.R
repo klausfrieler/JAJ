@@ -14,7 +14,8 @@ JAJ_img_url <- "http://media.gold-msi.org/test_materials/JAJ/img"
 #' For a standalone implementation of the JAJ,
 #' consider using \code{\link{JAJ_standalone}()}.
 #' @param num_items (Integer scalar) Number of items in the test.
-#' @param take_training (Logical scalar) Whether to include the training phase.
+#' @param take_training (Logical scalar) Whether to include the training phase. Defaults to TRUE.
+#' @param with_welcome (Logical scalar) Whether to include a welcome message. Defaults to TRUE.
 #' @param label (Character scalar) Label to give the JAJ  results in the output file. Defaults to JAJ.
 #' @param feedback (Function) Defines the feedback to give the participant
 #' at the end of the test. Defaults JAJ_feedback_with_score.
@@ -75,7 +76,8 @@ JAJ <- function(num_items = 16L,
           button_text = psychTestR::i18n("CONTINUE")
       ), dict = dict),
 
-      if (take_training) instructions(img_dir),
+      if (take_training) psychTestR::new_timeline(
+        instructions(img_dir), dict = dict),
       main_test(label = label, img_dir = img_dir, num_items = num_items,
                 next_item.criterion = next_item.criterion,
                 next_item.estimator = next_item.estimator,
