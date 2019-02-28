@@ -37,7 +37,7 @@ make_training_feedback <- function(seq_len){
     #psychTestR::set_global(key = "last_correct_position", value =  0, state = state)
     psychTestR::one_button_page(
       body = shiny::p(answer_hand, shiny::tags$br(),
-                      answer_pos),
+                      answer_pos, style = "margin-left:10%;text-align:justify;width:600px;max-width:80%"),
       button_text = psychTestR::i18n("CONTINUE")
     )
   }

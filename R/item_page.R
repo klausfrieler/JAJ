@@ -147,7 +147,7 @@ JAJ_page_position <- function(seq_length,
                            usemap = "#dot_positions",
                            id = "click_area")
   map <- shiny::tags$map(name = "dot_positions", generate_area_entry(1:6, scale_factor = .5))
-  img <- shiny::div(shiny::p(prompt), jill, click_area)
+  img <- shiny::div(shiny::div(prompt, style = auto_align_div(prompt, style_only = TRUE)), jill, click_area)
   #text_inputs <- lapply(1:seq_length, generate_pos_input)
   #text_input <-   shiny::tags$input(id = "pos_seq", name = "pos_seq", size = seq_length, style= "visibility:visible")
   text_input <-   shiny::textInput("pos_seq", label="", value="", width = 100)
@@ -175,15 +175,18 @@ JAJ_page_hand <- function(position,
                           get_answer = NULL,
                           on_complete = NULL,
                           instruction_page = FALSE){
-  jill <- shiny::img(src = sprintf("%s/%s", img_dir, "jill.jpg"), height="300")
+  jill <- shiny::img(src = sprintf("%s/%s", img_dir, "jill.jpg"), height = "300")
   hand_pos <- c("l" = "left", "r" = "right")
 
   jack_img_src <- sprintf("jack_%s_%s.jpg", hand_pos[ball_hand], position)
-  jack <- shiny::img(src = sprintf("%s/%s", img_dir, jack_img_src), height="300")
+  jack <- shiny::img(src = sprintf("%s/%s", img_dir, jack_img_src), height = "300")
   text_input <-   shiny::textInput("pos_seq", label="", value="", width = 100)
   pos_inputs <- shiny::div(id = "position_inputs", style="margin-left:50%;visibility:hidden", text_input)
 
-  page_prompt <- shiny::div(shiny::p(prompt), jill, jack, pos_inputs)
+  page_prompt <- shiny::div(
+    shiny::div(prompt, style = auto_align_div(prompt, style_only = TRUE)),
+    jill, jack, pos_inputs)
+  #page_prompt <- auto_align_div(prompt, , jill,  jack, pos_inputs)
   choices <- c("r", "l")
   names(choices) <- c(psychTestR::i18n("SAME"),
                       psychTestR::i18n("DIFFERENT"))
@@ -247,7 +250,7 @@ JAJ_item <- function(item_id,
 
   }
   prompt <- shiny::div(
-    shiny::h4(progress),
+    shiny::h4(progress, style="text-align:center"),
     psychTestR::i18n("PROMPT_HAND"))
 
   for(i in seq_along(pos_seq)){
@@ -263,7 +266,9 @@ JAJ_item <- function(item_id,
     #messagef("Adding hand pages #%d for pos seq: %s, new length: %d ", i, paste0(pos_seq, " "), length(ret))
   }
 
-  prompt <- psychTestR::i18n("PROMPT_POSITION")
+  prompt <- shiny::div(
+    shiny::h4(progress, style="text-align:center"),
+    psychTestR::i18n("PROMPT_POSITION"))
   get_answer <- get_answer_positions(paste(pos_seq, collapse=""), item_id)
 
   ret <- c(ret, JAJ_page_position(seq_length = length(pos_seq),
@@ -289,7 +294,7 @@ JAJ_item_wrapper <- function(img_dir, state, counter){
     "num_question" = running_item_number,
     "test_length" = num_items_in_test) )
   prompt <- shiny::div(
-    shiny::h4(progress),
+    shiny::h4(progress, style = "text-align:center"),
     psychTestR::i18n("PROMPT_HAND"))
   label <- sprintf("q%d", running_item_number)
   #messagef("Generating: %s for item_id %s, max_items: %s, pos_seq: %s, hand_seq: %s", label, item_id, num_items_in_test, pos_seq, hand_seq)

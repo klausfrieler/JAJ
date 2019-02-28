@@ -1,8 +1,21 @@
-info_page <- function(id, style = "text-align:justify; margin-left:20%;margin-right:20%") {
+info_page <- function(id, style = "text-align:justify; margin-left:10%;width:60%") {
   psychTestR::one_button_page(shiny::div(psychTestR::i18n(id, html = TRUE), style = style),
                               button_text = psychTestR::i18n("CONTINUE"))
 }
 
+auto_align_div <- function(text, max_char = 80, style_only = F){
+  style <- "margin-left:0%;width:600px;max-width:80%;text-align:justify"
+  if(length(text) > 1){
+    return(style)
+  }
+  if(nchar(text) <= max_char){
+    style <- "margin-left:0%;width:600px;max-width:80%;text-align:center"
+  }
+  if(style_only){
+    return(style)
+  }
+  shiny::div(p(text), style = style)
+}
 get_instruction <- function(img_dir){
   ins_def <- JAJ::JAJ_instructions_def
   ret <- c()
@@ -38,8 +51,9 @@ get_instruction <- function(img_dir){
                                       instruction_page = !ins_def$buttons[i]))
     }
     else {
-      ret <- c(ret, psychTestR::one_button_page(body = prompt,
-                                    button_text = psychTestR::i18n("CONTINUE")))
+      ret <- c(ret, psychTestR::one_button_page(
+        body = auto_align_div(prompt),
+        button_text = psychTestR::i18n("CONTINUE")))
     }
   }
   #messagef("Generated %d instruction pages", length(ret))

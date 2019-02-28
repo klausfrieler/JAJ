@@ -51,6 +51,7 @@ JAJ_img_url <- "http://media.gold-msi.org/test_materials/JAJ/img"
 #'
 JAJ <- function(num_items = 16L,
                 take_training = TRUE,
+                with_welcome = TRUE,
                 label = "JAJ",
                 feedback = JAJ_feedback_with_score(),
                 next_item.criterion = "bOpt",
@@ -68,6 +69,12 @@ JAJ <- function(num_items = 16L,
   img_dir <- gsub("/$", "", JAJ_img_url)
   psychTestR::new_timeline({
     c(
+      if (with_welcome) psychTestR::new_timeline(
+        psychTestR::one_button_page(
+          body = shiny::h4(psychTestR::i18n("WELCOME")),
+          button_text = psychTestR::i18n("CONTINUE")
+      ), dict = dict),
+
       if (take_training) instructions(img_dir),
       main_test(label = label, img_dir = img_dir, num_items = num_items,
                 next_item.criterion = next_item.criterion,

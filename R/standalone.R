@@ -30,6 +30,7 @@
 JAJ_standalone <- function(title = NULL,
                            num_items = 16L,
                            with_feedback = FALSE,
+                           with_welcome = TRUE,
                            take_training = TRUE,
                            admin_password = "conifer",
                            researcher_email = "longgold@gold.uc.ak",
@@ -40,7 +41,7 @@ JAJ_standalone <- function(title = NULL,
   feedback <- NULL
   #language <- match.arg(language, c("EN", "DE", "RU"))
   if(with_feedback) {
-    feedback <- JAJ_feedback_with_score()
+    #feedback <- JAJ_feedback_with_score()
     feedback <- JAJ_feedback_with_graph()
   }
   elts <- c(
@@ -52,6 +53,7 @@ JAJ_standalone <- function(title = NULL,
     ),
     JAJ(num_items = num_items,
         take_training = take_training,
+        with_welcome = with_welcome,
         feedback = feedback,
         ...),
     psychTestR::elt_save_results_to_disk(complete = TRUE),
@@ -70,6 +72,7 @@ JAJ_standalone <- function(title = NULL,
       dplyr::select(-key) %>%
       as.list() %>%
       unlist()
+    title <- gsub("&amp;", "&", title)
   }
   psychTestR::make_test(
     elts,
