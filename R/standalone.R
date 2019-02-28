@@ -66,7 +66,7 @@ JAJ_standalone <- function(title = NULL,
     title <-
       JAJ::JAJ_dict  %>%
       as.data.frame() %>%
-      dplyr::filter(key == "TITLE") %>%
+      dplyr::filter(key == "TESTNAME") %>%
       dplyr::select(-key) %>%
       as.list() %>%
       unlist()
