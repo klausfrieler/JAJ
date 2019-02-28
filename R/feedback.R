@@ -50,7 +50,7 @@ JAJ_feedback_graph_normal_curve <- function(perc_correct, x_min = 40, x_max = 16
 
   q <- q + ggplot2::labs(x = x_axis_lab, y = "")
   q <- q + ggplot2::ggtitle(main_title)
-  plotly::ggplotly(q)
+  plotly::ggplotly(q, width = 600, height = 450)
 }
 #' JAJ feedback (with graph)
 #'
