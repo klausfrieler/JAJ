@@ -14,7 +14,7 @@ auto_align_div <- function(text, max_char = 80, style_only = F){
   if(style_only){
     return(style)
   }
-  shiny::div(p(text), style = style)
+  shiny::div(shiny::p(text), style = style)
 }
 get_instruction <- function(img_dir){
   ins_def <- JAJ::JAJ_instructions_def
