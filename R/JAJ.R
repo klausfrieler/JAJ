@@ -68,8 +68,7 @@ JAJ <- function(num_items = 16L,
               psychTestR::is.test_element(feedback) ||
               is.null(feedback))
   img_dir <- gsub("/$", "", JAJ_img_url)
-  psychTestR::new_timeline({
-    c(
+  psychTestR::join(
       if (with_welcome) psychTestR::new_timeline(
         psychTestR::one_button_page(
           body = shiny::h4(psychTestR::i18n("WELCOME")),
@@ -85,6 +84,5 @@ JAJ <- function(num_items = 16L,
                 next_item.prior_par = next_item.prior_par,
                 final_ability.estimator = final_ability.estimator, dict = dict),
       feedback
-    )},
-    dict = JAJ::JAJ_dict)
+    )
 }

@@ -64,7 +64,8 @@ JAJ_standalone <- function(title = NULL,
         psychTestR::i18n("CLOSE_BROWSER"))
       ), dict = dict)
   )
-  if(is.null(title)){
+  if(is.null(title) || nchar(title) == 0){
+    require(dplyr)
     #extract title as named vector from dictionary
     title <-
       JAJ::JAJ_dict  %>%
