@@ -1,7 +1,7 @@
 library(tidyverse)
 library(psychTestR)
 library(psychTestRCAT)
-JAJ_img_url <- "http://media.gold-msi.org/test_materials/JAJ/img"
+JAJ_img_url <- "https://media.gold-msi.org/test_materials/JAJ/img"
 
 #' JAJ
 #'
