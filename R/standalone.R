@@ -42,8 +42,8 @@ JAJ_standalone <- function(title = NULL,
   feedback <- NULL
   #language <- match.arg(language, c("EN", "DE", "RU"))
   if(with_feedback) {
-    #feedback <- JAJ_feedback_with_score()
-    feedback <- JAJ_feedback_with_graph()
+    feedback <- JAJ_feedback_with_score()
+    #feedback <- JAJ_feedback_with_graph()
   }
   elts <- c(
     psychTestR::new_timeline(

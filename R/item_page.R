@@ -127,6 +127,9 @@ get_answer_positions <- function(correct_answer, item_id){
     ret
   }
 }
+g_img_height <- "250" # originally: 300
+g_img_factor <- as.numeric(g_img_height)/300.0
+
 JAJ_page_position <- function(seq_length,
                               prompt = "",
                               label = "",
@@ -135,7 +138,7 @@ JAJ_page_position <- function(seq_length,
                               get_answer = NULL,
                               on_complete = NULL,
                               instruction_page = FALSE){
-  jill <- shiny::img(src = sprintf("%s/%s", JAJ_img_url, "jill.jpg"), height="300")
+  jill <- shiny::img(src = sprintf("%s/%s", JAJ_img_url, "jill.jpg"), height = g_img_height)
   pos_img <- "empty.jpg"
   if(!is.null(arrow_pos) & is.numeric(arrow_pos)){
     pos_img <- sprintf("arrow_%d.jpg", arrow_pos)
@@ -143,10 +146,10 @@ JAJ_page_position <- function(seq_length,
   }
   click_area <- shiny::img(src = sprintf("%s/%s",
                                          JAJ_img_url, pos_img),
-                           height = "300",
+                           height = g_img_height,
                            usemap = "#dot_positions",
                            id = "click_area")
-  map <- shiny::tags$map(name = "dot_positions", generate_area_entry(1:6, scale_factor = .5))
+  map <- shiny::tags$map(name = "dot_positions", generate_area_entry(1:6, scale_factor = .5*g_img_factor))
   img <- shiny::div(shiny::div(prompt, style = auto_align_div(prompt, style_only = TRUE)), jill, click_area)
   #text_inputs <- lapply(1:seq_length, generate_pos_input)
   #text_input <-   shiny::tags$input(id = "pos_seq", name = "pos_seq", size = seq_length, style= "visibility:visible")
@@ -166,6 +169,7 @@ JAJ_page_position <- function(seq_length,
 
   }
 }
+
 JAJ_page_hand <- function(position,
                           ball_hand,
                           img_dir,
@@ -175,11 +179,11 @@ JAJ_page_hand <- function(position,
                           get_answer = NULL,
                           on_complete = NULL,
                           instruction_page = FALSE){
-  jill <- shiny::img(src = sprintf("%s/%s", img_dir, "jill.jpg"), height = "300")
+  jill <- shiny::img(src = sprintf("%s/%s", img_dir, "jill.jpg"), height = g_img_height)
   hand_pos <- c("l" = "left", "r" = "right")
 
   jack_img_src <- sprintf("jack_%s_%s.jpg", hand_pos[ball_hand], position)
-  jack <- shiny::img(src = sprintf("%s/%s", img_dir, jack_img_src), height = "300")
+  jack <- shiny::img(src = sprintf("%s/%s", img_dir, jack_img_src), height = g_img_height)
   text_input <-   shiny::textInput("pos_seq", label="", value="", width = 100)
   pos_inputs <- shiny::div(id = "position_inputs", style="margin-left:50%;visibility:hidden", text_input)
 
