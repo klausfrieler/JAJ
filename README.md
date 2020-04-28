@@ -79,7 +79,7 @@ and downloading your data.
 For more details on the psychTestR interface, 
 see http://psychtestr.com/.
 
-The JAJ currently supports English (EN),  German (DE), and Russion (RU).
+The JAJ currently supports English (EN),  German (DE), and Russian (RU).
 You can select one of these languages by passing a language code as 
 an argument to `JAJ_standalone()`, e.g. `JAJ_standalone(languages = "DE")`,
 or alternatively by passing it as a URL parameter to the test browser,
