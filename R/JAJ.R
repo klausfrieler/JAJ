@@ -53,6 +53,7 @@ JAJ_img_url <- "https://media.gold-msi.org/test_materials/JAJ/img"
 JAJ <- function(num_items = 16L,
                 take_training = TRUE,
                 with_welcome = TRUE,
+                with_finish = TRUE,
                 label = "JAJ",
                 feedback = JAJ_feedback_with_score(),
                 next_item.criterion = "bOpt",
@@ -83,6 +84,11 @@ JAJ <- function(num_items = 16L,
                 next_item.prior_dist = next_item.prior_dist,
                 next_item.prior_par = next_item.prior_par,
                 final_ability.estimator = final_ability.estimator, dict = dict),
-      feedback
+      feedback,
+      if(with_finish) psychTestR::new_timeline(
+        psychTestR::one_button_page(shiny::p(
+          psychTestR::i18n("FINISHED"),
+          psychTestR::i18n("CONTINUE"))
+        ), dict = dict)
     )
 }
