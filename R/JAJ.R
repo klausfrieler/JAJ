@@ -86,9 +86,9 @@ JAJ <- function(num_items = 16L,
                 final_ability.estimator = final_ability.estimator, dict = dict),
       feedback,
       if(with_finish) psychTestR::new_timeline(
-        psychTestR::one_button_page(shiny::p(
-          psychTestR::i18n("FINISHED"),
-          psychTestR::i18n("CONTINUE"))
+        psychTestR::one_button_page(
+          body = psychTestR::i18n("FINISHED"),
+          button_text = psychTestR::i18n("CONTINUE")
         ), dict = dict)
     )
 }
