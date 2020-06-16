@@ -263,7 +263,7 @@ JAJ_item <- function(item_id,
                                 ball_hand = hand_seq[i],
                                 img_dir = img_dir,
                                 prompt = prompt,
-                                label = label_hand,
+                                label = sprintf("%s_%s", label_hand, i),
                                 save_answer = save_answer,
                                 get_answer = get_answer,
                                 on_complete = on_complete_hand))

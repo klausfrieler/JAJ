@@ -1,4 +1,4 @@
-﻿# Jack and Jill Memory Test (JAJ)
+# Jack and Jill Memory Test (JAJ)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1415363.svg)](https://doi.org/10.5281/zenodo.1415363)
 
@@ -20,6 +20,10 @@ x <- devtools::session_info()
 x$packages[x$packages$package %in% c("JAJ", "psychTestR", "psychTestRCAT"), ]
 ```
 
+## Acknowledgments
+
+Acknowledgment to the members of the Applied Cognitive Psychology and Neuroscience Laboratory of the Sirius University of Science and Technology, Sochi.
+ 
 ## Installation instructions (local use)
 
 1. If you don't have R installed, install it from here: https://cloud.r-project.org/
@@ -132,8 +136,15 @@ because this technique makes fewer assumptions about the participant group being
 This makes the test better suited to testing with diverse participant groups
 (e.g. children, clinical populations).
 
+
+
 ## Usage notes
 
 - The JAJ runs in your web browser.
 - By default, image files are hosted online on our servers.
 The test therefore requires internet connectivity.
+
+## References:
+
+D. Müllensiefen, K. Frieler, S. Silas, E.  Tsigeman, M.  Likhanov, Y. Kovas (submitted). *Jack and Jill: construction, calibration and validation of an adaptive visuospatial working memory test*
+ 
