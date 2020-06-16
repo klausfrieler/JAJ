@@ -22,7 +22,7 @@ x$packages[x$packages$package %in% c("JAJ", "psychTestR", "psychTestRCAT"), ]
 
 ## Acknowledgments
 
-Acknowledgment to the members of the Applied Cognitive Psychology and Neuroscience Laboratory of the Sirius University of Science and Technology, Sochi.
+We like to thank  the members of the Applied Cognitive Psychology and Neuroscience Laboratory of the Sirius University of Science and Technology, Sochi for their support in developing this test.
  
 ## Installation instructions (local use)
 
