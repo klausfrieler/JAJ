@@ -16,6 +16,7 @@ JAJ_img_url <- "https://media.gold-msi.org/test_materials/JAJ/img"
 #' @param num_items (Integer scalar) Number of items in the test.
 #' @param take_training (Logical scalar) Whether to include the training phase. Defaults to TRUE.
 #' @param with_welcome (Logical scalar) Whether to include a welcome message. Defaults to TRUE.
+#' @param with_finish (logical) Adds a "test finsihed" page at the end.
 #' @param label (Character scalar) Label to give the JAJ  results in the output file. Defaults to JAJ.
 #' @param feedback (Function) Defines the feedback to give the participant
 #' at the end of the test. Defaults JAJ_feedback_with_score.
