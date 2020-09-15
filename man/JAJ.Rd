@@ -4,11 +4,20 @@
 \alias{JAJ}
 \title{JAJ}
 \usage{
-JAJ(num_items = 16L, take_training = TRUE, with_welcome = TRUE,
-  label = "JAJ", feedback = JAJ_feedback_with_score(),
-  next_item.criterion = "bOpt", next_item.estimator = "BM",
-  next_item.prior_dist = "norm", next_item.prior_par = c(0, 1),
-  final_ability.estimator = "WL", dict = JAJ::JAJ_dict)
+JAJ(
+  num_items = 16L,
+  take_training = TRUE,
+  with_welcome = TRUE,
+  with_finish = TRUE,
+  label = "JAJ",
+  feedback = JAJ_feedback_with_score(),
+  next_item.criterion = "bOpt",
+  next_item.estimator = "BM",
+  next_item.prior_dist = "norm",
+  next_item.prior_par = c(0, 1),
+  final_ability.estimator = "WL",
+  dict = JAJ::JAJ_dict
+)
 }
 \arguments{
 \item{num_items}{(Integer scalar) Number of items in the test.}
@@ -16,6 +25,8 @@ JAJ(num_items = 16L, take_training = TRUE, with_welcome = TRUE,
 \item{take_training}{(Logical scalar) Whether to include the training phase. Defaults to TRUE.}
 
 \item{with_welcome}{(Logical scalar) Whether to include a welcome message. Defaults to TRUE.}
+
+\item{with_finish}{(logical) Adds a "test finsihed" page at the end.}
 
 \item{label}{(Character scalar) Label to give the JAJ  results in the output file. Defaults to JAJ.}
 

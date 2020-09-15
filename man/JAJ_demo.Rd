@@ -4,10 +4,16 @@
 \alias{JAJ_demo}
 \title{Demo JAJ}
 \usage{
-JAJ_demo(num_items = 3L, take_training = TRUE,
-  feedback = JAJ::JAJ_feedback_with_score(), admin_password = "demo",
-  researcher_email = "longgold@gold.uc.ak", dict = JAJ::JAJ_dict,
-  language = "EN", ...)
+JAJ_demo(
+  num_items = 3L,
+  take_training = TRUE,
+  feedback = JAJ::JAJ_feedback_with_score(),
+  admin_password = "demo",
+  researcher_email = "longgold@gold.uc.ak",
+  dict = JAJ::JAJ_dict,
+  language = "en",
+  ...
+)
 }
 \arguments{
 \item{num_items}{(Integer scalar) Number of items in the test.}
@@ -30,7 +36,7 @@ the email address of this package's developer.}
 \item{dict}{The psychTestR dictionary used for internationalisation.}
 
 \item{language}{The language you want to run your demo in.
-Possible languages include English (\code{"EN"}), German (\code{"DE"})
+Possible languages include English (\code{"en"}), German (\code{"de"})
 and Russion (\code{"RU"}).
 The first language is selected by default}
 

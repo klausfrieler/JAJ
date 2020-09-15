@@ -4,11 +4,19 @@
 \alias{JAJ_standalone}
 \title{Standalone JAJ}
 \usage{
-JAJ_standalone(title = NULL, num_items = 16L, with_feedback = FALSE,
-  with_welcome = TRUE, take_training = TRUE,
-  admin_password = "conifer", researcher_email = "longgold@gold.uc.ak",
-  languages = c("EN", "DE", "RU"), dict = JAJ::JAJ_dict,
-  validate_id = "auto", ...)
+JAJ_standalone(
+  title = NULL,
+  num_items = 16L,
+  with_feedback = FALSE,
+  with_welcome = TRUE,
+  take_training = TRUE,
+  admin_password = "conifer",
+  researcher_email = "longgold@gold.uc.ak",
+  languages = c("en", "de", "ru"),
+  dict = JAJ::JAJ_dict,
+  validate_id = "auto",
+  ...
+)
 }
 \arguments{
 \item{title}{(Scalar character) Title to display during testing.}
@@ -32,8 +40,8 @@ at the bottom of the screen so that online participants can ask for help.}
 
 \item{languages}{(Character vector)
 Determines the languages available to participants.
-Possible languages include English (\code{"EN"}), German (\code{"DE"})
-and Russion (\code{"RU"}).
+Possible languages include English (\code{"en"}), German (\code{"de"})
+and Russion (\code{"ru"}).
 The first language is selected by default}
 
 \item{dict}{The psychTestR dictionary used for internationalisation. Defaults to  JAJ_dict.}

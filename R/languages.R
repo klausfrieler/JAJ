@@ -3,5 +3,5 @@
 #' Lists the languages available for JAJ implementations.
 #' @export
 JAJ_languages <- function() {
-  c("EN", "DE", "RU")
+  c("en", "de", "ru")
 }

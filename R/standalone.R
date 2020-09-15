@@ -18,8 +18,8 @@
 #' at the bottom of the screen so that online participants can ask for help.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"EN"}), German (\code{"DE"})
-#' and Russion (\code{"RU"}).
+#' Possible languages include English (\code{"en"}), German (\code{"de"})
+#' and Russion (\code{"ru"}).
 #' The first language is selected by default
 #' @param dict The psychTestR dictionary used for internationalisation. Defaults to  JAJ_dict.
 #' @param validate_id An external function for validating IDs, which takes a string ID as input and returns a BOOELAN.
@@ -35,12 +35,12 @@ JAJ_standalone <- function(title = NULL,
                            take_training = TRUE,
                            admin_password = "conifer",
                            researcher_email = "longgold@gold.uc.ak",
-                           languages = c("EN", "DE", "RU"),
+                           languages = c("en", "de", "ru"),
                            dict = JAJ::JAJ_dict,
                            validate_id = "auto",
                            ...) {
   feedback <- NULL
-  #language <- match.arg(language, c("EN", "DE", "RU"))
+  #language <- match.arg(language, c("en", "de", "ru"))
   if(with_feedback) {
     feedback <- JAJ_feedback_with_score()
     #feedback <- JAJ_feedback_with_graph()
@@ -82,5 +82,5 @@ JAJ_standalone <- function(title = NULL,
                                    admin_password = admin_password,
                                    researcher_email = researcher_email,
                                    demo = FALSE,
-                                   languages = languages))
+                                   languages = tolower(languages)))
 }

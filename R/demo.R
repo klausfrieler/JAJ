@@ -16,7 +16,7 @@
 #' the email address of this package's developer.
 #' @param dict The psychTestR dictionary used for internationalisation.
 #' @param language The language you want to run your demo in.
-#' Possible languages include English (\code{"EN"}), German (\code{"DE"})
+#' Possible languages include English (\code{"en"}), German (\code{"de"})
 #' and Russion (\code{"RU"}).
 #' The first language is selected by default
 #' @param ... Further arguments to be passed to \code{\link{JAJ}()}.
@@ -27,8 +27,9 @@ JAJ_demo <- function(num_items = 3L,
                      admin_password = "demo",
                      researcher_email = "longgold@gold.uc.ak",
                      dict = JAJ::JAJ_dict,
-                     language = "EN",
+                     language = "en",
                      ...) {
+
   elts <- c(
     JAJ::JAJ(num_items = num_items,
              take_training = take_training,
@@ -47,5 +48,5 @@ JAJ_demo <- function(num_items = 3L,
                                    admin_password = admin_password,
                                    researcher_email = researcher_email,
                                    demo = TRUE,
-                                   languages = language))
+                                   languages = tolower(language)))
 }
