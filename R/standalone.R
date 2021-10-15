@@ -42,7 +42,7 @@ JAJ_standalone <- function(title = NULL,
   feedback <- NULL
   #language <- match.arg(language, c("en", "de", "ru"))
   if(with_feedback) {
-    feedback <- JAJ_feedback_with_score()
+    feedback <- JAJ::JAJ_feedback_with_score()
     #feedback <- JAJ_feedback_with_graph()
   }
   elts <- c(

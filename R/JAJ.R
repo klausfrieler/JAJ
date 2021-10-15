@@ -19,7 +19,7 @@ JAJ_img_url <- "https://media.gold-msi.org/test_materials/JAJ/img"
 #' @param with_finish (logical) Adds a "test finsihed" page at the end.
 #' @param label (Character scalar) Label to give the JAJ  results in the output file. Defaults to JAJ.
 #' @param feedback (Function) Defines the feedback to give the participant
-#' at the end of the test. Defaults JAJ_feedback_with_score.
+#' at the end of the test. Defaults JAJ::JAJ_feedback_with_score.
 #' @param next_item.criterion (Character scalar)
 #' Criterion for selecting successive items in the adaptive test.
 #' See the \code{criterion} argument in \code{\link[catR]{nextItem}} for possible values.
@@ -56,7 +56,7 @@ JAJ <- function(num_items = 16L,
                 with_welcome = TRUE,
                 with_finish = TRUE,
                 label = "JAJ",
-                feedback = JAJ_feedback_with_score(),
+                feedback = JAJ::JAJ_feedback_with_score(),
                 next_item.criterion = "bOpt",
                 next_item.estimator = "BM",
                 next_item.prior_dist = "norm",
