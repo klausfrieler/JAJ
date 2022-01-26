@@ -1,7 +1,7 @@
 Package: JAJ
 Type: Package
 Title: Jack & Jill Memory Test
-Version: 0.1.5
+Version: 0.1.6
 Author: Klaus Frieler
 Maintainer: Klaus Frieler <kf@omniversum.de>
 Description: Implementation of the Jack & Jill memory test
@@ -24,4 +24,4 @@ Suggests:
     codetools,
     devtools (>= 1.13.6)
 Remotes: pmcharrison/psychTestR, pmcharrison/psychTestRCAT
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.1

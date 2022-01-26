@@ -4,6 +4,7 @@
 
 The JAJ is an adaptive test for visual working memory.
 
+[Try a demo here](https://shiny.gold-msi.org/longgold_demo/?test=JAJ)
 
 ## Citation
 

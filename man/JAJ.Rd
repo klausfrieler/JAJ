@@ -10,7 +10,7 @@ JAJ(
   with_welcome = TRUE,
   with_finish = TRUE,
   label = "JAJ",
-  feedback = JAJ_feedback_with_score(),
+  feedback = JAJ::JAJ_feedback_with_score(),
   next_item.criterion = "bOpt",
   next_item.estimator = "BM",
   next_item.prior_dist = "norm",
@@ -31,7 +31,7 @@ JAJ(
 \item{label}{(Character scalar) Label to give the JAJ  results in the output file. Defaults to JAJ.}
 
 \item{feedback}{(Function) Defines the feedback to give the participant
-at the end of the test. Defaults JAJ_feedback_with_score.}
+at the end of the test. Defaults JAJ::JAJ_feedback_with_score.}
 
 \item{next_item.criterion}{(Character scalar)
 Criterion for selecting successive items in the adaptive test.

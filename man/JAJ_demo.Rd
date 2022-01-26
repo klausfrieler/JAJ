@@ -36,8 +36,8 @@ the email address of this package's developer.}
 \item{dict}{The psychTestR dictionary used for internationalisation.}
 
 \item{language}{The language you want to run your demo in.
-Possible languages include English (\code{"en"}), German (\code{"de"})
-and Russion (\code{"RU"}).
+Possible languages include English (\code{"en"}), German (\code{"de"}),
+Italian (\code{"it"}), and Russian (\code{"ru"}).
 The first language is selected by default}
 
 \item{...}{Further arguments to be passed to \code{\link{JAJ}()}.}
