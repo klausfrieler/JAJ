@@ -37,7 +37,7 @@ the email address of this package's developer.}
 
 \item{language}{The language you want to run your demo in.
 Possible languages include English (\code{"en"}), German (\code{"de"}), formal German (\code{"de_f"}),
-Italian (\code{"it"}), Spanish \code{"es"}, and Russian (\code{"ru"}).
+Italian (\code{"it"}), Spanish \code{"es"}, Latvian \code{"lv"}, and Russian (\code{"ru"}).
 The first language is selected by default}
 
 \item{...}{Further arguments to be passed to \code{\link{JAJ}()}.}
