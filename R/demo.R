@@ -17,7 +17,7 @@
 #' @param dict The psychTestR dictionary used for internationalisation.
 #' @param language The language you want to run your demo in.
 #' Possible languages include English (\code{"en"}), German (\code{"de"}), formal German (\code{"de_f"}),
-#' Italian (\code{"it"}), Spanish \code{"es"}, Latvian \code{"lv"}, and Russian (\code{"ru"}).
+#' Italian (\code{"it"}), Spanish \code{"es"}, Latvian \code{"lv"}, Slovenian \code{"sv"},and Russian (\code{"ru"}).
 #' The first language is selected by default
 #' @param ... Further arguments to be passed to \code{\link{JAJ}()}.
 #' @export
