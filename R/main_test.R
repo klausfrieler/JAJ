@@ -7,7 +7,6 @@ main_test <- function(label, img_dir, num_items,
   item_bank <- JAJ::JAJ_item_bank
   show_item <- psychTestR::new_timeline(c(
     psychTestR::code_block(function(state, ...) {
-      messagef("JAJ: Main test main loop first code block")
       psychTestR::set_local("counter", 0L, state)
       counter <- psychTestR::get_local("counter", state)
     }),
@@ -15,8 +14,8 @@ main_test <- function(label, img_dir, num_items,
       test = function(state, ...) {
         counter <- psychTestR::get_local("counter", state)
         n <- psychTestR::get_local("item", state)$seq_len + 1
-        messagef("Test Item : %s", paste0(psychTestR::get_local("item", state), collapse = " "))
-        messagef("Test Answer: %s", paste0(psychTestR::answer(state), collapse = " "))
+        #messagef("Test Item : %s", paste0(psychTestR::get_local("item", state), collapse = " "))
+        #messagef("Test Answer: %s", paste0(psychTestR::answer(state), collapse = " "))
         psychTestR::answer(state) <- psychTestR::answer(state)$raw
         counter < n
       },
